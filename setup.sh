@@ -1,10 +1,18 @@
+#!/usr/bin/env bash
 # ask PM
 
 set -e
 apt-get update -y
-# apt-get install -y curl
-# curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-# apt-get install -y nodejs
-npm install
 
-apt-get -y install scamper
+# chat thinks we should also do ca-certificates as a fix for https but we'll circle back
+apt-get install nodejs npm git -y
+
+
+# clone scamper repo in folder
+git clone https://github.com/slag-plt/scamper.git /autograder/scamper
+cd /autograder/scamper
+
+# here we could optionally git checkout into our branch.
+
+# run scamper
+npm run dev
