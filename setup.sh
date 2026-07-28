@@ -7,8 +7,8 @@ apt-get update -y
 apt-get install nodejs npm git -y
 
 # Update Things
-curl -fsSL https://nodesource.com | sudo -E bash -
-sudo apt-get install -y nodejs
+curl -fsSL https://nodesource.com | -E bash -
+apt-get install -y nodejs
 
 # clone scamper repo in folder
 git clone https://github.com/slag-plt/scamper.git /autograder/scamper
