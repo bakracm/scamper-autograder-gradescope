@@ -15,5 +15,4 @@ npm run cli dummy.scm
 cp /autograder/results/stdout /autograder/results/results.json
 
 # This line needs work
-sed -i 's/^[^{]*{//' /autograder/results/results.json
-sed -i 's/void//g' /autograder/results/results.json
+perl -0777 -i -pe 's/\A[^{]*//s; s/}\s*void\s*{/},\n{/g; s/void//g' /autograder/results/results.json
