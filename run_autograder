@@ -3,8 +3,8 @@
 # set up files.
 
 # difference in > and >> 
-cat /autograder/submission/dummy.scm /autograder/source/tests.scm > /autograder/source/dummy.scm
-cd /autograder/source
+cat /autograder/submission/dummy.scm /autograder/source/tests.scm > /autograder/scamper/dummy.scm
+cd /autograder/scamper
 
 # run new_file.txt handling output and putting it in /autograder/results/results.json
 # by default, output will (should) go to /autograder/results/stdout
@@ -13,3 +13,7 @@ npm run cli dummy.scm
 
 # Copying stdout to results.json for autograder to read
 cp /autograder/results/stdout /autograder/results/results.json
+
+# This line needs work
+sed -i 's/^[^{]*{//' /autograder/results/results.json
+sed -i 's/void//g' /autograder/results/results.json
