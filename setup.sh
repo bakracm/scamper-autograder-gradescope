@@ -4,10 +4,10 @@ set -e
 apt-get update -y
 
 # chat thinks we should also do ca-certificates as a fix for https but we'll circle back
-apt-get install nodejs npm git -y
+# apt-get install nodejs npm git -y
 
 # Update Things
-curl -fsSL https://nodesource.com | -E bash -
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 apt-get install -y nodejs
 
 # clone scamper repo in folder
@@ -21,4 +21,4 @@ git checkout grader
 npm ci
 
 # run scamper (npm run build might be alternative)
-npm run dev
+npm run cli
